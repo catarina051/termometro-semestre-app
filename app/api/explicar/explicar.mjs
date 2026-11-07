@@ -139,7 +139,7 @@ export async function tratar({ body, ip = "local", env = {}, fetchImpl = fetch, 
   if (!limitar(ip, agora)) return { status: 429, json: { erro: "muitas consultas; tente de novo em um minuto" } };
   if (!env.GEMINI_API_KEY) return { status: 500, json: { erro: "serviço de explicação não configurado" } };
 
-  const modelo = env.GEMINI_MODEL || "gemini-2.5-flash";
+  const modelo = env.GEMINI_MODEL || "gemini-3.8-flash";
   let correcao;
   for (let tentativa = 0; tentativa < 2; tentativa++) {
     let texto;
